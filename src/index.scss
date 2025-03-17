@@ -1,15 +1,9 @@
+@use "colors" as *;
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-// COLORS VARIABLES
-$color-primary: #88db55;
-$color-white: #ffffff;
-$color-black: #0a0a0a;
-$color-grey: #191919;
-$color-red: #d13333;
 
 html {
   font-size: 62.5%;
@@ -26,13 +20,190 @@ body {
 .container {
   max-width: 132rem;
   margin: 0 auto;
+  padding-top: 23rem;
+}
+
+// SPACING
+.mb-1 {
+  margin-bottom: 6.4rem;
+}
+
+.mb-2 {
+  margin-bottom: 4.8rem;
+}
+
+.mb-3 {
+  margin-bottom: 4rem;
+}
+
+.mb-4 {
+  margin-bottom: 3.2rem;
+}
+
+.mb-5 {
+  margin-bottom: 2.4rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.6rem;
 }
 
 // GENERAL CLASSES
 
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  text-decoration: none;
+  font-weight: 600;
+  color: $color-primary;
+
+  &::before {
+    position: absolute;
+    bottom: -2px;
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: $color-primary;
+    transform-origin: left;
+    transition: width 0.6s ease;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.btn {
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 1.3rem 1.5rem;
+  line-height: 100%;
+  font-weight: 600;
+  text-align: center;
+  color: $color-black;
+  font-family: inherit;
+  min-width: 18rem;
+  transition: transform 0.2s;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateY(-3px);
+  }
+}
+
+.btn-primary {
+  background-color: $color-primary;
+}
+
+.btn-secondary {
+  background-color: $color-white;
+}
+
 .heading-1 {
-  font-size: 9.6rem;
-  font-weight: bold;
+  font-size: 7.2rem;
+  font-weight: 800;
   text-align: center;
   line-height: 80%;
+}
+
+.heading-2 {
+  font-size: 4.8rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0.8;
+}
+
+.paragraphs-primary {
+  font-family: inherit;
+  line-height: 1.2;
+  font-size: 1.6rem;
+  text-align: center;
+  color: rgba($color-white, 0.7);
+}
+
+// HEADER
+.header {
+  .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    &__text {
+      background-color: $color-black;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .header-image {
+    overflow: hidden;
+    z-index: 1;
+    &__img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.header-buttons {
+  display: flex;
+  gap: 3.2rem;
+}
+
+// LOGOS SECTION
+.logos {
+  overflow-x: hidden;
+
+  &__list {
+    position: relative;
+    margin-top: 9.6rem;
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-items: center;
+    flex-basis: auto;
+    overflow-x: hidden;
+    width: 100%;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      height: 100%;
+      width: 10%;
+      z-index: 1;
+    }
+    &::before {
+      right: 0;
+      background: linear-gradient(90deg, #0a0a0a00, #0a0a0a);
+    }
+    &::after {
+      left: 0;
+      background: linear-gradient(90deg, #0a0a0a, #0a0a0a00);
+    }
+  }
+  &__item {
+    height: 7rem;
+    object-fit: cover;
+    padding: 0 3.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.inner-slider {
+  display: flex;
+  flex-shrink: 0;
+  flex-basis: auto;
+  min-width: min-content;
+  align-items: center;
 }

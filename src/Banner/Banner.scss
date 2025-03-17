@@ -1,0 +1,21 @@
+@use "../colors" as *;
+
+.banner {
+  h2 {
+    line-height: 1;
+  }
+  .banner__line {
+    margin-top: 1.6rem;
+    width: 100%;
+    height: 1rem;
+    border-radius: 4px;
+    background-color: $color-primary;
+  }
+  .banner__image {
+    margin-top: 3.2rem;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
