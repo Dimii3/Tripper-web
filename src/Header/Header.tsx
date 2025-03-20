@@ -5,6 +5,7 @@ import gsap from "gsap";
 import Button from "../components/Button";
 
 import "./Header.scss";
+import { Element } from "react-scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,30 +39,32 @@ export default function Header() {
     );
   });
   return (
-    <header className="header container">
-      <div className="header-content mb-1">
-        <h1 className="header-content__heading mb-3 heading-1">
-          Discover the wildness
-          <br />
-          of nature
-        </h1>
-        <p className="header-content__text paragraphs-primary mb-2">
-          Get adventurous in the most unknown areas
-          <br />
-          on earth, jungle, forests, caves, mountains.
-        </p>
-        <div className="header-buttons">
-          <Button mode="primary">Start the Journey</Button>
-          <Button mode="secondary">Join Us</Button>
+    <Element name="header">
+      <header className="header container">
+        <div className="header-content mb-1">
+          <h1 className="header-content__heading mb-3 heading-1">
+            Discover the wildness
+            <br />
+            of nature
+          </h1>
+          <p className="header-content__text paragraphs-primary mb-2">
+            Get adventurous in the most unknown areas
+            <br />
+            on earth, jungle, forests, caves, mountains.
+          </p>
+          <div className="header-buttons">
+            <Button mode="primary">Start the Journey</Button>
+            <Button mode="secondary">Join Us</Button>
+          </div>
         </div>
-      </div>
-      <div className="header-image">
-        <img
-          className="header-image__img"
-          src="/header-img.png"
-          alt="header image"
-        />
-      </div>
-    </header>
+        <div className="header-image">
+          <img
+            className="header-image__img"
+            src="/header-img.png"
+            alt="header image"
+          />
+        </div>
+      </header>
+    </Element>
   );
 }

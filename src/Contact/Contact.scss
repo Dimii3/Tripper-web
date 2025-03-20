@@ -1,0 +1,88 @@
+@use "../colors" as *;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container {
+  margin-top: 9rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15rem;
+  align-items: center;
+
+  .contact__image {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .contact-form {
+    padding: 2rem;
+    &__wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3.2rem;
+    }
+    &__input,
+    &__textarea {
+      width: 100%;
+      padding: 1rem;
+      border: transparent;
+      background: transparent;
+      border-bottom: 2px solid $color-white;
+      color: $color-white;
+      font-size: 1.6rem;
+      font-family: inherit;
+      resize: none;
+      transition: border-color 0.3s ease;
+      &:focus {
+        outline: none;
+      }
+    }
+    &__label {
+      position: absolute;
+      transition: transform 0.3s, font-size 0.3s, color 0.3s;
+    }
+    &__input {
+      margin-bottom: 2.4rem;
+
+      font-family: inherit;
+    }
+    &__textarea {
+      width: 100%;
+      margin-bottom: 3.2rem;
+    }
+    &__btn {
+      background-color: $color-primary;
+      border: none;
+      width: 100%;
+    }
+  }
+}
+
+.contact-form__input:focus + .contact-form__label,
+.contact-form__textarea:focus + .contact-form__label {
+  transform: translateY(-2rem);
+  font-size: 1.2rem;
+  color: $color-white;
+}
+
+.contact-form__input:not(:placeholder-shown) + .contact-form__label,
+.contact-form__textarea:not(:placeholder-shown) + .contact-form__label {
+  transform: translateY(-2rem);
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.paragraph-contact {
+  max-width: 40%;
+}
+
+.contact-form__input--error,
+.contact-form__textarea--error {
+  border-bottom: 2px solid $color-red !important;
+}

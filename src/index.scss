@@ -17,10 +17,18 @@ body {
   background-color: $color-black;
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 .container {
   max-width: 132rem;
   margin: 0 auto;
-  padding-top: 23rem;
+  padding-top: 25rem;
 }
 
 // SPACING
@@ -86,13 +94,7 @@ body {
   color: $color-black;
   font-family: inherit;
   min-width: 18rem;
-  transition: transform 0.2s;
   cursor: pointer;
-  &:hover,
-  &:focus,
-  &:active {
-    transform: translateY(-3px);
-  }
 }
 
 .btn-primary {

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -12,11 +13,14 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   return (
-    <a
+    <motion.a
+      whileHover={{ y: -5 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={onClick}
       href="#"
       className={`btn ${mode === "primary" ? "btn-primary" : "btn-secondary"}`}
     >
       {children}
-    </a>
+    </motion.a>
   );
 }

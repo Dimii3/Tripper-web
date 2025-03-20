@@ -6,10 +6,14 @@
   .paragraphs-primary {
     text-align: left;
   }
+  .about-heading,
+  .about-text {
+    max-width: 50rem;
+  }
   .about-top,
   .about-bottom {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: space-between;
     gap: 20rem;
   }
 
@@ -58,4 +62,8 @@
       font-weight: 500;
     }
   }
+}
+
+.paragraph-heading {
+  max-width: 60%;
 }

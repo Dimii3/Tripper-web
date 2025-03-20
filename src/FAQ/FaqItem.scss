@@ -1,0 +1,62 @@
+@use "../colors" as *;
+
+.faq-list__item {
+  max-height: 6rem;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  .faq-list__button {
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border: 0;
+    width: 100%;
+    padding: 2rem;
+    color: $color-white;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.6rem;
+    background-color: $color-grey;
+    cursor: pointer;
+    .faq-list__icon {
+      width: 2rem;
+      height: 2rem;
+      background-color: $color-red;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+    .faq-list__icon--active {
+      background-color: $color-primary;
+    }
+  }
+
+  .faq-list__answer {
+    padding: 2rem;
+    background-color: $color-grey;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+    opacity: 0;
+
+    .paragraphs-primary {
+      text-align: left;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.faq-list__item--expanded .faq-list__answer {
+  opacity: 1;
+}
+
+.faq-list__item--expanded .faq-list__button {
+  background-color: $color-grey;
+  .faq-list__icon {
+    background-color: $color-primary;
+  }
+}
+
+.faq-list__item--expanded {
+  max-height: 25rem;
+}

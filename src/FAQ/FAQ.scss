@@ -1,0 +1,28 @@
+@use "../colors" as *;
+
+.faq {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 15rem;
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    overflow: hidden;
+  }
+  .faq-heading {
+    .heading-2,
+    .paragraphs-primary {
+      text-align: left;
+    }
+    &__info {
+      color: $color-primary;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      line-height: 1;
+      font-size: 1.6rem;
+    }
+  }
+}

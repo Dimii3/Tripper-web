@@ -1,0 +1,62 @@
+@use "../colors" as *;
+
+.team {
+  .team-top {
+    display: flex;
+    justify-content: space-between;
+    .heading-2,
+    .paragraphs-primary {
+      text-align: left;
+    }
+
+    .paragraphs-primary {
+      width: 45%;
+    }
+    &__text {
+      flex: 0 0 auto;
+      align-self: flex-start;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-radius: 2px;
+      color: $color-black;
+      padding: 1.3rem 2.5rem;
+      background-color: $color-primary;
+    }
+  }
+
+  .team-bottom {
+    margin-top: 9rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 419px));
+    justify-content: space-between;
+
+    .team-card {
+      display: flex;
+      gap: 2.4rem;
+      flex-direction: column;
+
+      &__avatar {
+        overflow: hidden;
+        border-radius: 4px;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1.6rem;
+        padding: 5rem 2rem;
+        background-color: $color-grey;
+        border-radius: 4px;
+        &--secondary {
+          background-color: transparent;
+          padding: 2rem;
+        }
+      }
+    }
+  }
+}

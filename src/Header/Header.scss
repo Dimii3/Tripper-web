@@ -7,16 +7,11 @@
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    &__text {
-      background-color: $color-black;
-      width: 100%;
-      z-index: 1;
-    }
   }
 
   .header-image {
     overflow: hidden;
-    z-index: 1;
+
     &__img {
       width: 100%;
       object-fit: cover;
@@ -27,4 +22,8 @@
 .header-buttons {
   display: flex;
   gap: 3.2rem;
+}
+
+.header.container {
+  padding-top: 23rem;
 }

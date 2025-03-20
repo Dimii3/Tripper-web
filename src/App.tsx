@@ -1,21 +1,51 @@
 import About from "./About/About";
 import Banner from "./Banner/Banner";
-import Contact from "./Contact";
-import FAQ from "./FAQ";
-import Footer from "./Footer";
+import Contact from "./Contact/Contact";
+import FAQ from "./FAQ/FAQ";
+import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Logos from "./Logos/Logos";
+import Navigation from "./Navigation/Navigation";
+import Team from "./Team/Team";
+import SmoothScroll from "../src/components/SmoothScroll";
+import { useEffect, useState } from "react";
+import Preloader from "./components/Preloader";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const handleDOMContentLoaded = () => {
+      setTimeout(() => {
+        setLoading(false);
+        console.log("here");
+      }, 4500);
+    };
+
+    document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    };
+  }, []);
   return (
     <>
-      <Header></Header>
-      <Logos></Logos>
-      <About></About>
-      <Banner></Banner>
-      <FAQ></FAQ>
-      <Contact></Contact>
-      <Footer></Footer>
+      {loading === true ? (
+        <Preloader></Preloader>
+      ) : (
+        <SmoothScroll>
+          <Navigation></Navigation>
+          <Header></Header>
+          <Logos></Logos>
+          <About></About>
+          <Banner></Banner>
+          <Team></Team>
+          <FAQ></FAQ>
+          <Contact></Contact>
+          <Footer></Footer>
+        </SmoothScroll>
+      )}
     </>
   );
 }
