@@ -4,7 +4,7 @@ import "./Navigation.scss";
 export default function Navigation() {
   return (
     <nav className="nav">
-      <Link to="header" smooth={true} duration={500}>
+      <Link to="header" smooth={true} duration={1000}>
         <img src="main-logo.svg" alt="logo" className="nav__logo" />
       </Link>
 
@@ -14,6 +14,7 @@ export default function Navigation() {
             activeClass="nav__item--active"
             offset={100}
             to="trips"
+            spy={true}
             smooth={true}
             duration={1000}
           >
@@ -25,6 +26,7 @@ export default function Navigation() {
             activeClass="nav__item--active"
             offset={100}
             to="team"
+            spy={true}
             smooth={true}
             duration={1000}
           >
@@ -36,6 +38,7 @@ export default function Navigation() {
             activeClass="nav__item--active"
             offset={100}
             to="faq"
+            spy={true}
             smooth={true}
             duration={1000}
           >
@@ -47,6 +50,7 @@ export default function Navigation() {
             activeClass="nav__item--active"
             offset={100}
             to="contact"
+            spy={true}
             smooth={true}
             duration={1000}
           >

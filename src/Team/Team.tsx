@@ -1,8 +1,37 @@
 import { Element } from "react-scroll";
 import Heading from "../components/Heading";
 import "./Team.scss";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export default function Team() {
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".team",
+      start: "top bottom",
+      end: "bottom center+=300",
+      scrub: true,
+
+      toggleActions: "play none none none",
+      animation: gsap
+        .timeline()
+        .from(".team-top", {
+          opacity: 0,
+          stagger: 0.2,
+          duration: 1,
+          y: 200,
+        })
+        .from(".team-card", {
+          opacity: 0,
+          y: 200,
+          delay: 0.2,
+          duration: 1,
+          ease: "power2.out",
+          stagger: 0.2,
+        }),
+    });
+  });
   return (
     <Element name="team">
       <section className="team container">

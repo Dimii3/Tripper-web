@@ -37,6 +37,26 @@ export default function Header() {
       },
       0.15
     );
+    tl.from(
+      ".header-image__img",
+      {
+        opacity: 0,
+        y: 100,
+      },
+      0.2
+    );
+
+    ScrollTrigger.create({
+      trigger: ".header",
+      start: "top top",
+      end: "bottom top",
+      animation: gsap.to(".header-content", {
+        opacity: 0,
+        y: 200,
+        duration: 0.6,
+      }),
+      scrub: true,
+    });
   });
   return (
     <Element name="header">
@@ -53,11 +73,16 @@ export default function Header() {
             on earth, jungle, forests, caves, mountains.
           </p>
           <div className="header-buttons">
-            <Button mode="primary">Start the Journey</Button>
-            <Button mode="secondary">Join Us</Button>
+            <Button href="about" mode="primary">
+              Start the Journey
+            </Button>
+            <Button href="contact" mode="secondary">
+              Join Us
+            </Button>
           </div>
         </div>
         <div className="header-image">
+          <div className="header-image__shadow"></div>
           <img
             className="header-image__img"
             src="/header-img.png"

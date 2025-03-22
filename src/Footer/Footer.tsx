@@ -1,8 +1,26 @@
 import { Link } from "react-scroll";
 import "./Footer.scss";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
 
 const currentYear = new Date().getFullYear();
 export default function Footer() {
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".footer",
+      start: "center+=70 bottom",
+      end: "bottom bottom",
+      markers: true,
+      scrub: true,
+      animation: gsap.from(".footer-col", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+      }),
+    });
+  });
   return (
     <footer className="footer">
       <div className="footer-container">

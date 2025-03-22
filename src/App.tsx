@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleDOMContentLoaded = () => {
@@ -23,8 +23,6 @@ export default function App() {
     };
 
     document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
-
-    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
     };

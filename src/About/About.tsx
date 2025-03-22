@@ -5,8 +5,41 @@ import Link from "../components/Link";
 import Heading from "../components/Heading";
 import { Element } from "react-scroll";
 import "./About.scss";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export default function About() {
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".about",
+      start: "top bottom-=20",
+      end: "bottom top",
+      animation: gsap
+        .timeline()
+        .from(
+          ".about-top",
+          {
+            opacity: 0,
+            y: 200,
+
+            stagger: 0.2,
+          },
+          -0.2
+        )
+        .from(
+          ".about-card",
+          {
+            opacity: 0,
+            y: 200,
+            ease: "power2.out",
+          },
+          -0.2
+        ),
+      scrub: true,
+      toggleActions: "play none none none",
+    });
+  });
   return (
     <Element name="trips">
       <section className="about container">

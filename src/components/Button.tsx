@@ -1,26 +1,29 @@
 import React from "react";
-import { motion } from "framer-motion";
+
+import { Link } from "react-scroll";
 
 type ButtonProps = {
   children: React.ReactNode;
   mode?: "primary" | "secondary";
   onClick?: () => void;
+  href?: string;
 };
 
 export default function Button({
   children,
   mode = "primary",
   onClick,
+  href,
 }: ButtonProps) {
   return (
-    <motion.a
-      whileHover={{ y: -5 }}
-      whileTap={{ scale: 0.95 }}
+    <Link
+      to={href || ""}
+      className={`btn btn-${mode}`}
       onClick={onClick}
-      href="#"
-      className={`btn ${mode === "primary" ? "btn-primary" : "btn-secondary"}`}
+      smooth={true}
+      duration={1000}
     >
       {children}
-    </motion.a>
+    </Link>
   );
 }
