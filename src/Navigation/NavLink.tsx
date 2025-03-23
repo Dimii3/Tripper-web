@@ -20,7 +20,7 @@ export default function NavLink({
       if (event.matches) {
         setOffset(0);
       } else {
-        setOffset(100);
+        setOffset(160);
       }
     };
 
@@ -32,6 +32,8 @@ export default function NavLink({
       match.removeEventListener("change", handleChange);
     };
   }, []);
+
+  console.log("offset", offset);
 
   return (
     <li className="nav__item">

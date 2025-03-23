@@ -83,7 +83,7 @@ export default function Contact() {
           <div className="contact__image">
             <img
               src="/img-contact.png"
-              alt="Contact us for your next adventure"
+              alt="Forest on the hill"
               loading="lazy"
             />
           </div>

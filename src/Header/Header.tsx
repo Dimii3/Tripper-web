@@ -90,7 +90,7 @@ export default function Header() {
           <img
             className="header-image__img"
             src="/header-img.png"
-            alt="header image"
+            alt="Tropical forest"
           />
         </div>
       </header>
