@@ -20,7 +20,7 @@ type QuestionsT = {
 export const questions: QuestionsT[] = [
   {
     id: 1,
-    question: "What experience do I need to join a Tripper expedition?",
+    question: "Don't have experience, but want to travel?",
     answer:
       "Most of our trips are designed for all skill levels! Some extreme expeditions require prior experience, but we always provide training and guidance to ensure you're prepared.",
   },
@@ -48,4 +48,11 @@ export const questions: QuestionsT[] = [
     answer:
       "Simply visit our Trips page, select your adventure, and fill out the booking form! Our team will get in touch to finalize the details.",
   },
+];
+
+export const navLinks = [
+  { id: "n1", name: "Trips", href: "trips" },
+  { id: "n2", name: "Team", href: "team" },
+  { id: "n3", name: "FAQ", href: "faq" },
+  { id: "n4", name: "Contact", href: "contact" },
 ];

@@ -48,7 +48,11 @@ export default function Team() {
         <div className="team-bottom">
           <div className="team-card">
             <div className="team-card__avatar">
-              <img src="/team-member-1.png" alt="Expedition Leader" />
+              <img
+                src="/team-member-1.png"
+                alt="Expedition Leader"
+                loading="lazy"
+              />
             </div>
             <div className="team-card__content team-card__content--secondary">
               <h3 className="heading-3">Liam "Pathfinder" Carter</h3>
@@ -61,12 +65,20 @@ export default function Team() {
               <p className="paragraphs-primary">Bushcraft Expert</p>
             </div>
             <div className="team-card__avatar">
-              <img src="/team-member-2.png" alt="Expedition Leader" />
+              <img
+                src="/team-member-2.png"
+                alt="Expedition Leader"
+                loading="lazy"
+              />
             </div>
           </div>
           <div className="team-card">
             <div className="team-card__avatar">
-              <img src="/team-member-3.png" alt="Expedition Leader" />
+              <img
+                src="/team-member-3.png"
+                alt="Expedition Leader"
+                loading="lazy"
+              />
             </div>
             <div className="team-card__content">
               <h3 className="heading-3">Sofia "Shadow" Navarro</h3>

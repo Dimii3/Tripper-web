@@ -63,7 +63,6 @@ li {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-
   text-decoration: none;
   font-weight: 600;
   color: $color-primary;
@@ -115,106 +114,60 @@ li {
 .heading-1 {
   font-size: 7.2rem;
   font-weight: 800;
-  text-align: center;
-  line-height: 80%;
+  line-height: 0.9;
+  letter-spacing: -2px;
   color: $color-white;
 }
 
 .heading-2 {
   font-size: 4.8rem;
   font-weight: bold;
-  text-align: center;
   line-height: 0.8;
   color: $color-white;
 }
 
 .paragraphs-primary {
   font-family: inherit;
-  line-height: 1.2;
+  line-height: 1.3;
   font-size: 1.6rem;
-  text-align: center;
   color: rgba($color-white, 0.7);
 }
 
-// HEADER
-.header {
-  .header-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-    &__text {
-      background-color: $color-black;
-      width: 100%;
-      z-index: 1;
-    }
+@media screen and (max-width: 1320px) {
+  .container {
+    margin-top: 12rem;
+    padding: 4rem 2rem;
   }
 
-  .header-image {
-    overflow: hidden;
-    z-index: 1;
-    &__img {
-      width: 100%;
-      object-fit: cover;
-    }
+  .heading-1 {
+    font-size: 6rem;
   }
 }
 
-.header-buttons {
-  display: flex;
-  gap: 3.2rem;
-}
-
-// LOGOS SECTION
-.logos {
-  overflow-x: hidden;
-
-  &__list {
-    position: relative;
-    margin-top: 9.6rem;
-    display: flex;
-    flex-shrink: 0;
-    flex-grow: 0;
-    align-items: center;
-    flex-basis: auto;
-    overflow-x: hidden;
-    width: 100%;
-
-    &::after,
-    &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      height: 100%;
-      width: 10%;
-      z-index: 1;
-    }
-    &::before {
-      right: 0;
-      background: linear-gradient(90deg, #0a0a0a00, #0a0a0a);
-    }
-    &::after {
-      left: 0;
-      background: linear-gradient(90deg, #0a0a0a, #0a0a0a00);
-    }
-  }
-  &__item {
-    height: 7rem;
-    object-fit: cover;
-    padding: 0 3.2rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-    &:hover {
-      transform: scale(0.9);
-    }
+@media screen and (max-width: 992px) {
+  .heading-2 {
+    font-size: 4rem;
   }
 }
 
-.inner-slider {
-  display: flex;
-  flex-shrink: 0;
-  flex-basis: auto;
-  min-width: min-content;
-  align-items: center;
+@media (min-width: 360px) and (max-width: 575px) {
+  .container {
+    margin-top: 0;
+    padding-top: 4rem 1rem;
+  }
+  .heading-1 {
+    font-size: 4.8rem;
+  }
+  .heading-2 {
+    font-size: 3.2rem;
+  }
+  .paragraphs-primary {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    min-width: 100%;
+    padding: 1.5rem 1.5rem;
+  }
 }

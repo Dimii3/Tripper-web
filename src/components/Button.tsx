@@ -20,6 +20,8 @@ export default function Button({
       to={href || ""}
       className={`btn btn-${mode}`}
       onClick={onClick}
+      offset={100}
+      spy={true}
       smooth={true}
       duration={1000}
     >

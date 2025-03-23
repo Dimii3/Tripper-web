@@ -18,6 +18,7 @@ export default function Header() {
       {
         opacity: 0,
         y: 100,
+        delay: 0.3,
       },
       0
     );
@@ -26,6 +27,7 @@ export default function Header() {
       {
         opacity: 0,
         y: 100,
+        delay: 0.3,
       },
       0.1
     );
@@ -34,6 +36,7 @@ export default function Header() {
       {
         opacity: 0,
         y: 100,
+        delay: 0.3,
       },
       0.15
     );
@@ -42,6 +45,7 @@ export default function Header() {
       {
         opacity: 0,
         y: 100,
+        delay: 0.3,
       },
       0.2
     );

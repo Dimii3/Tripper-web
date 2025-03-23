@@ -16,8 +16,8 @@ export default function Banner() {
         pin: true,
       },
       opacity: 0,
-      y: 200,
-      stagger: 0.4,
+      y: 100,
+      stagger: 0.3,
       duration: 1,
       ease: "power2.out",
     });

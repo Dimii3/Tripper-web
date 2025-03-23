@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Heading from "../components/Heading";
-import "./Contact.scss";
 import Input from "./Input";
 import { Element } from "react-scroll";
+import "./Contact.scss";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -75,7 +75,7 @@ export default function Contact() {
       <section className="contact container">
         <Heading
           header="Let’s Plan Your Next Adventure!"
-          headerClasses="mb-5"
+          headerClasses="contact__heading"
           paragraph="Got questions? Ready to embark on the journey of a lifetime? Reach out to us—we’re here to help!"
           paragraphClasses="paragraph-contact"
         ></Heading>

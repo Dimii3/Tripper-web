@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./FaqItem.scss";
+import { GoDotFill } from "react-icons/go";
 
 type FaqItemT = {
   question: string;
@@ -18,7 +19,9 @@ export default function FaqItem({ question, answer }: FaqItemT) {
     >
       <button onClick={handleToggle} className="faq-list__button">
         {question}
-        <div className="faq-list__icon"></div>
+        <div className="faq-list__icon">
+          <GoDotFill />
+        </div>
       </button>
       <div className={`faq-list__answer`}>
         <p className="paragraphs-primary">{answer}</p>

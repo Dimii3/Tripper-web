@@ -16,13 +16,35 @@
       text-align: left;
     }
     &__info {
-      color: $color-primary;
-      margin-top: auto;
       display: flex;
-      align-items: center;
       gap: 0.8rem;
+      align-items: center;
+      margin-top: auto;
       line-height: 1;
+      color: $color-primary;
       font-size: 1.6rem;
     }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .faq {
+    gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 9rem;
+  }
+  .faq-heading {
+    order: -1;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 575px) {
+  .faq {
+    gap: 6.4rem;
   }
 }

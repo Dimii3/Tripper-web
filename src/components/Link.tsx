@@ -9,7 +9,7 @@ type LinkProps = {
 
 export default function Link({ href, classLink, children }: LinkProps) {
   return (
-    <a href={href} className={`link ${classLink}`}>
+    <a href={href} className={`link  ${classLink ? classLink : " "}`}>
       {children} <FaArrowRightLong />
     </a>
   );

@@ -1,12 +1,13 @@
 @use "../colors" as *;
 
 .faq-list__item {
-  max-height: 6rem;
+  max-height: 8rem;
   overflow: hidden;
   transition: max-height 0.3s ease;
   .faq-list__button {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     border: 0;
@@ -19,14 +20,15 @@
     background-color: $color-grey;
     cursor: pointer;
     .faq-list__icon {
-      width: 2rem;
-      height: 2rem;
-      background-color: $color-red;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-    }
-    .faq-list__icon--active {
-      background-color: $color-primary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        color: $color-primary;
+        width: 3rem;
+        height: 3rem;
+        transition: color 0.3s ease;
+      }
     }
   }
 
@@ -52,11 +54,37 @@
 
 .faq-list__item--expanded .faq-list__button {
   background-color: $color-grey;
+
   .faq-list__icon {
-    background-color: $color-primary;
+    svg {
+      color: $color-red;
+    }
   }
 }
 
 .faq-list__item--expanded {
   max-height: 25rem;
+}
+
+@media (min-width: 360px) and (max-width: 575px) {
+  .faq-list__item .faq-list__button {
+    height: 10rem;
+    width: 100%;
+    white-space: wrap;
+  }
+  .faq-list__item {
+    max-height: 10rem;
+  }
+  .faq-list__item.faq-list__item--expanded {
+    max-height: 30rem;
+  }
+
+  .faq-list__item .faq-list__button {
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+
+    gap: 1rem;
+  }
 }

@@ -11,13 +11,12 @@ export default function Footer() {
       trigger: ".footer",
       start: "center+=70 bottom",
       end: "bottom bottom",
-      markers: true,
       scrub: true,
       animation: gsap.from(".footer-col", {
         opacity: 0,
         y: 50,
         duration: 1,
-        stagger: 0.2,
+        stagger: 0.3,
       }),
     });
   });

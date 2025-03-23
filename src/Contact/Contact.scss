@@ -7,11 +7,11 @@
 }
 
 .contact-container {
-  margin-top: 9rem;
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(2, 1fr);
   gap: 15rem;
-  align-items: center;
+  margin-top: 9rem;
 
   .contact__image {
     img {
@@ -31,13 +31,13 @@
     &__textarea {
       width: 100%;
       padding: 1rem;
-      border: transparent;
-      background: transparent;
-      border-bottom: 2px solid $color-white;
       color: $color-white;
       font-size: 1.6rem;
       font-family: inherit;
       resize: none;
+      border: transparent;
+      background: transparent;
+      border-bottom: 2px solid $color-white;
       transition: border-color 0.3s ease;
       &:focus {
         outline: none;
@@ -79,10 +79,46 @@
 }
 
 .paragraph-contact {
-  max-width: 40%;
+  max-width: 55%;
+  text-align: center;
 }
 
 .contact-form__input--error,
 .contact-form__textarea--error {
   border-bottom: 2px solid $color-red !important;
+}
+
+@media screen and (max-width: 1320px) {
+  .contact-container {
+    gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 4.8rem;
+  }
+  .contact-container .contact-form {
+    padding: 0;
+  }
+  .paragraph-contact {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact .contact__heading {
+    text-align: center;
+  }
+
+  .paragraph-contact {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contact-container {
+    margin-top: 6.4rem;
+  }
 }
