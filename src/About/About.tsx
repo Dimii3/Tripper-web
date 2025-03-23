@@ -6,38 +6,24 @@ import Heading from "../components/Heading";
 import { Element } from "react-scroll";
 import "./About.scss";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".about",
-      start: "top bottom-=20",
-      end: "bottom top",
-      animation: gsap
-        .timeline()
-        .from(
-          ".about-top",
-          {
-            opacity: 0,
-            y: 200,
-
-            stagger: 0.2,
-          },
-          -0.2
-        )
-        .from(
-          ".about-card",
-          {
-            opacity: 0,
-            y: 200,
-            ease: "power2.out",
-          },
-          -0.2
-        ),
-      scrub: true,
-      toggleActions: "play none none none",
+    gsap.from([".about-top", ".about-card"], {
+      opacity: 0,
+      stagger: 0.2,
+      duration: 1,
+      y: 100,
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top center",
+        end: "bottom bottom",
+        scrub: true,
+      },
     });
   });
   return (

@@ -1,6 +1,11 @@
 @use "../colors" as *;
 
 .banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   h2 {
     line-height: 1;
   }

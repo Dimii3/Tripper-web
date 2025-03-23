@@ -1,23 +1,25 @@
 import { Link } from "react-scroll";
-import "./Footer.scss";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import "./Footer.scss";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const currentYear = new Date().getFullYear();
 export default function Footer() {
   useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".footer",
-      start: "center+=70 bottom",
-      end: "bottom bottom",
-      scrub: true,
-      animation: gsap.from(".footer-col", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.3,
-      }),
+    gsap.from(".footer-col", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 70%",
+        end: "bottom bottom",
+        scrub: true,
+      },
     });
   });
   return (

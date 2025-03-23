@@ -1,11 +1,10 @@
-import { useGSAP } from "@gsap/react";
-
+import Button from "../components/Button";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
-import Button from "../components/Button";
+import { useGSAP } from "@gsap/react";
+import { Element } from "react-scroll";
 
 import "./Header.scss";
-import { Element } from "react-scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,16 +49,16 @@ export default function Header() {
       0.2
     );
 
-    ScrollTrigger.create({
-      trigger: ".header",
-      start: "top top",
-      end: "bottom top",
-      animation: gsap.to(".header-content", {
-        opacity: 0,
-        y: 200,
-        duration: 0.6,
-      }),
-      scrub: true,
+    gsap.to(".header-content", {
+      opacity: 0,
+      y: 200,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".header",
+        start: "top top+=100",
+        end: "bottom center",
+        scrub: true,
+      },
     });
   });
   return (

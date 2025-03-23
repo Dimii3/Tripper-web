@@ -71,8 +71,8 @@ export default function Contact() {
   };
 
   return (
-    <Element name="contact">
-      <section className="contact container">
+    <Element name="contact" className="container">
+      <section className="contact">
         <Heading
           header="Let’s Plan Your Next Adventure!"
           headerClasses="contact__heading"

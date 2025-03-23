@@ -1,27 +1,26 @@
 import { useGSAP } from "@gsap/react";
-import "./Banner.scss";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+
+import "./Banner.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Banner() {
   useGSAP(() => {
-    gsap.from([".banner__heading", ".banner__image img"], {
+    gsap.from(".banner", {
+      opacity: 0,
+      duration: 1,
+      y: 100,
       scrollTrigger: {
         trigger: ".banner",
-        start: "top top",
-        end: "bottom top",
+        start: "top center",
+        end: "bottom bottom",
         scrub: true,
-        pin: true,
       },
-      opacity: 0,
-      y: 100,
-      stagger: 0.3,
-      duration: 1,
-      ease: "power2.out",
     });
   });
+
   return (
     <section className="banner container">
       <h2 className="heading-1 banner__heading">

@@ -1,9 +1,10 @@
-import { Link } from "react-scroll";
-import "./Navigation.scss";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-scroll";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { navLinks } from "../constants";
 import NavLink from "./NavLink";
+import "./Navigation.scss";
+
 export default function Navigation() {
   const { scrollY } = useScroll();
   const [isMobile, setIsMobile] = useState(false);

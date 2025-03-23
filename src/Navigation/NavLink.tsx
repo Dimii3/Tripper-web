@@ -18,9 +18,9 @@ export default function NavLink({
 
     const handleChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
-        setOffset(0);
+        setOffset(-55);
       } else {
-        setOffset(160);
+        setOffset(-90);
       }
     };
 
@@ -33,7 +33,7 @@ export default function NavLink({
     };
   }, []);
 
-  console.log("offset", offset);
+  console.log(offset);
 
   return (
     <li className="nav__item">

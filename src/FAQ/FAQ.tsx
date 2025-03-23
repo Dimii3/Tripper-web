@@ -7,8 +7,8 @@ import FaqItem from "./FaqItem";
 
 export default function FAQ() {
   return (
-    <Element name="faq">
-      <section className="faq container">
+    <Element name="faq" className="container">
+      <section className="faq">
         <ul className="faq-list">
           {questions.map((item) => (
             <FaqItem
