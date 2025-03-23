@@ -42,7 +42,7 @@ export default function Team() {
               <img
                 src="/team-member-1.png"
                 alt="Expedition Leader"
-                loading="lazy"
+                // loading="lazy"
               />
             </div>
             <div className="team-card__content team-card__content--secondary">
@@ -59,7 +59,7 @@ export default function Team() {
               <img
                 src="/team-member-2.png"
                 alt="Expedition Leader"
-                loading="lazy"
+                // loading="lazy"
               />
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function Team() {
               <img
                 src="/team-member-3.png"
                 alt="Expedition Leader"
-                loading="lazy"
+                // loading="lazy"
               />
             </div>
             <div className="team-card__content">

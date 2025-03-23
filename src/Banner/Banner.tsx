@@ -3,17 +3,19 @@ import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 
 import "./Banner.scss";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Banner() {
+  const bannerRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    gsap.from(".banner", {
+    gsap.from(bannerRef.current, {
       opacity: 0,
       duration: 1,
       y: 100,
       scrollTrigger: {
-        trigger: ".banner",
+        trigger: bannerRef.current,
         start: "top center",
         end: "bottom bottom",
         scrub: true,
@@ -22,7 +24,7 @@ export default function Banner() {
   });
 
   return (
-    <section className="banner container">
+    <section ref={bannerRef} className="banner container">
       <h2 className="heading-1 banner__heading">
         Ready for the adventure
         <br />
@@ -32,7 +34,7 @@ export default function Banner() {
         <img
           src="banner.png"
           alt="Scenic view of forest at sunrise"
-          loading="lazy"
+          // loading="lazy"
         />
       </div>
     </section>

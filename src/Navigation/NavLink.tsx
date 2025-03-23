@@ -33,8 +33,6 @@ export default function NavLink({
     };
   }, []);
 
-  console.log(offset);
-
   return (
     <li className="nav__item">
       <Link

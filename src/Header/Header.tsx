@@ -5,10 +5,14 @@ import { useGSAP } from "@gsap/react";
 import { Element } from "react-scroll";
 
 import "./Header.scss";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
+  const headerContentRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -49,12 +53,12 @@ export default function Header() {
       0.2
     );
 
-    gsap.to(".header-content", {
+    gsap.to(headerContentRef.current, {
       opacity: 0,
       y: 200,
       duration: 1,
       scrollTrigger: {
-        trigger: ".header",
+        trigger: headerRef.current,
         start: "top top+=100",
         end: "bottom center",
         scrub: true,
@@ -63,8 +67,8 @@ export default function Header() {
   });
   return (
     <Element name="header">
-      <header className="header container">
-        <div className="header-content mb-1">
+      <header ref={headerRef} className="header container">
+        <div ref={headerContentRef} className="header-content mb-1">
           <h1 className="header-content__heading mb-3 heading-1">
             Discover the wildness
             <br />

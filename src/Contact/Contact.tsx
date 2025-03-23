@@ -84,7 +84,7 @@ export default function Contact() {
             <img
               src="/img-contact.png"
               alt="Forest on the hill"
-              loading="lazy"
+              // loading="lazy"
             />
           </div>
           <form onSubmit={onSubmitForm} className="contact-form">

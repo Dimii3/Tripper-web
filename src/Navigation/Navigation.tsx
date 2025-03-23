@@ -35,7 +35,13 @@ export default function Navigation() {
         animate={hidden ? "hidden" : "visible"}
         className={`nav ${isMobile ? "nav--mobile" : ""}`}
       >
-        <Link to="header" smooth={true} duration={1000} onClick={handleMenu}>
+        <Link
+          to="header"
+          smooth={true}
+          duration={1000}
+          offset={-300}
+          onClick={handleMenu}
+        >
           <img src="main-logo.svg" alt="logo" className="nav__logo" />
         </Link>
         <button

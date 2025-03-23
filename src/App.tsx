@@ -12,24 +12,22 @@ import { useState } from "react";
 import Preloader from "./components/Preloader";
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   if (loading === true) {
     return <Preloader setIsLoading={setLoading}></Preloader>;
   }
   return (
-    <>
-      <SmoothScroll>
-        <Navigation></Navigation>
-        <Header></Header>
-        <Logos></Logos>
-        <About></About>
-        <Banner></Banner>
-        <Team></Team>
-        <FAQ></FAQ>
-        <Contact></Contact>
-        <Footer></Footer>
-      </SmoothScroll>
-    </>
+    <SmoothScroll>
+      <Navigation></Navigation>
+      <Header></Header>
+      <Logos></Logos>
+      <About></About>
+      <Banner></Banner>
+      <Team></Team>
+      <FAQ></FAQ>
+      <Contact></Contact>
+      <Footer></Footer>
+    </SmoothScroll>
   );
 }

@@ -8,18 +8,23 @@ import "./About.scss";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  const aboutTopRef = useRef<HTMLDivElement>(null);
+  const cardOneRef = useRef<HTMLDivElement>(null);
+  const cardTwoRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    gsap.from([".about-top", ".about-card"], {
+    gsap.from([aboutTopRef.current, cardOneRef.current, cardTwoRef.current], {
       opacity: 0,
       stagger: 0.2,
       duration: 1,
       y: 100,
       scrollTrigger: {
-        trigger: ".about",
+        trigger: aboutRef.current,
         start: "top center",
         end: "bottom bottom",
         scrub: true,
@@ -28,8 +33,8 @@ export default function About() {
   });
   return (
     <Element name="trips">
-      <section className="about container">
-        <div className="about-top">
+      <section ref={aboutRef} className="about container">
+        <div ref={aboutTopRef} className="about-top">
           <div className="about-heading">
             <Heading
               headerClasses="about__header"
@@ -52,7 +57,7 @@ export default function About() {
           </div>
         </div>
         <div className="about-bottom">
-          <div className="about-card">
+          <div ref={cardOneRef} className="about-card">
             <img
               className="about-card__image"
               src="/img-trip-forest.png"
@@ -83,7 +88,7 @@ export default function About() {
               </ul>
             </div>
           </div>
-          <div className="about-card">
+          <div ref={cardTwoRef} className="about-card">
             <img
               className="about-card__image"
               src="/img-trip-caves.png"
