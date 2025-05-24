@@ -7,18 +7,24 @@ import Header from "./Header/Header";
 import Logos from "./Logos/Logos";
 import Navigation from "./Navigation/Navigation";
 import Team from "./Team/Team";
-import SmoothScroll from "./components/SmoothScroll";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
+import Lenis from "lenis";
 
 export default function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  if (loading === true) {
-    return <Preloader setIsLoading={setLoading}></Preloader>;
-  }
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
   return (
-    <SmoothScroll>
+    <>
+      {loading && <Preloader setIsLoading={setLoading} />}
       <Navigation></Navigation>
       <Header></Header>
       <Logos></Logos>
@@ -28,6 +34,6 @@ export default function App() {
       <FAQ></FAQ>
       <Contact></Contact>
       <Footer></Footer>
-    </SmoothScroll>
+    </>
   );
 }

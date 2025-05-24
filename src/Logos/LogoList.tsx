@@ -13,7 +13,7 @@ export default function LogoList() {
 
   return (
     <div className="logos__list">
-      <motion.ul className="inner-slider" animate={logosAnimation}>
+      <motion.div className="inner-slider" animate={logosAnimation}>
         {LOGOS_BRAND.map((logo) => (
           <img
             className="logos__item"
@@ -22,8 +22,8 @@ export default function LogoList() {
             alt={logo.brand}
           ></img>
         ))}
-      </motion.ul>
-      <motion.ul className="inner-slider" animate={logosAnimation}>
+      </motion.div>
+      <motion.div className="inner-slider" animate={logosAnimation}>
         {LOGOS_BRAND.map((logo) => (
           <img
             className="logos__item"
@@ -32,8 +32,8 @@ export default function LogoList() {
             alt={logo.brand}
           ></img>
         ))}
-      </motion.ul>
-      <motion.ul className="inner-slider" animate={logosAnimation}>
+      </motion.div>
+      <motion.div className="inner-slider" animate={logosAnimation}>
         {LOGOS_BRAND.map((logo) => (
           <img
             className="logos__item"
@@ -42,7 +42,7 @@ export default function LogoList() {
             alt={logo.brand}
           ></img>
         ))}
-      </motion.ul>
+      </motion.div>
     </div>
   );
 }

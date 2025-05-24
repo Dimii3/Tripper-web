@@ -14,45 +14,6 @@ export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline();
-
-    tl.from(
-      ".header-content__heading",
-      {
-        opacity: 0,
-        y: 100,
-        delay: 0.3,
-      },
-      0
-    );
-    tl.from(
-      ".header-content__text",
-      {
-        opacity: 0,
-        y: 100,
-        delay: 0.3,
-      },
-      0.1
-    );
-    tl.from(
-      ".header-buttons",
-      {
-        opacity: 0,
-        y: 100,
-        delay: 0.3,
-      },
-      0.15
-    );
-    tl.from(
-      ".header-image__img",
-      {
-        opacity: 0,
-        y: 100,
-        delay: 0.3,
-      },
-      0.2
-    );
-
     gsap.to(headerContentRef.current, {
       opacity: 0,
       y: 200,

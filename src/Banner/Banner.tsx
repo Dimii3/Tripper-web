@@ -11,15 +11,15 @@ export default function Banner() {
   const bannerRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
     gsap.from(bannerRef.current, {
+      scrollTrigger: {
+        trigger: bannerRef.current,
+        start: "top 60%",
+        end: "bottom 90%",
+        scrub: true,
+      },
       opacity: 0,
       duration: 1,
       y: 100,
-      scrollTrigger: {
-        trigger: bannerRef.current,
-        start: "top center",
-        end: "bottom bottom",
-        scrub: true,
-      },
     });
   });
 
@@ -31,11 +31,7 @@ export default function Banner() {
         of a lifetime?
       </h2>
       <div className="banner__image">
-        <img
-          src="banner.png"
-          alt="Scenic view of forest at sunrise"
-          // loading="lazy"
-        />
+        <img src="banner.png" alt="Scenic view of forest at sunrise" />
       </div>
     </section>
   );

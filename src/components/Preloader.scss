@@ -1,13 +1,15 @@
 @use "../colors" as *;
 .preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 3.2rem;
-  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: $color-black;
-  z-index: 9999;
+  z-index: 99999;
 }

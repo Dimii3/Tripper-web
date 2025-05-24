@@ -45,6 +45,7 @@ export default function Navigation() {
           <img src="main-logo.svg" alt="logo" className="nav__logo" />
         </Link>
         <button
+          aria-label="Menu button"
           className={`nav__btn ${isMobile ? "nav__btn--active" : ""}`}
           onClick={handleMenu}
         >
