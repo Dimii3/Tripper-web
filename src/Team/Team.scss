@@ -38,8 +38,10 @@
       &__avatar {
         overflow: hidden;
         border-radius: 4px;
+        height: auto;
         img {
-          height: 100%;
+          height: clamp(40rem, 30vw, 50rem);
+          width: 100%;
           object-fit: cover;
         }
       }
